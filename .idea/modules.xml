@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SSM_Generator.iml" filepath="$PROJECT_DIR$/.idea/modules/SSM_Generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SSM_Generator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SSM_Generator_main.iml" group="SSM_Generator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SSM_Generator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SSM_Generator_test.iml" group="SSM_Generator" />
+    </modules>
+  </component>
+</project>

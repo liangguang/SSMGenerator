@@ -1,0 +1,58 @@
+group 'com.swust.zj'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: "idea"
+apply plugin: "eclipse"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
+    mavenCentral()
+}
+
+ext {
+    servletVersion = "2.5"
+    jspVersion = "2.2"
+    springVersion = "4.3.10.RELEASE"
+    mybatisVersion = "3.4.4"
+    mybatisSpringVersion = "1.3.1"
+    pagehelperVersion = "4.1.0"
+    druidVersion = "1.1.2"
+    mysqlVersion = "5.1.38"
+    jacksonVersion = "2.8.9"
+    classmateVersion = "1.1.0"
+    swaggerVersion = "2.6.1"
+    junitVersion = "4.12"
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+}
+
+dependencies {
+    compile fileTree(dir:'lib',include:['*.jar'])
+    compile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+def createDir = {
+    path ->
+        File dir = file(path)
+        if(!dir.exists()){
+            dir.mkdirs()
+        }
+}
+
+task makeJavaDir << {
+    def paths = ["${rootDir}/src/main/java","${rootDir}/src/main/resources","${rootDir}/","${rootDir}/src/test/java"]
+    paths.forEach(createDir)
+}
+
+task makePersonalJavaDir << {
+    def paths = ["${rootDir}/src/main/java/com/swust/zj","${rootDir}/src/main/resources","${rootDir}/","${rootDir}/src/test/java/com/swust/zj"]
+    paths.forEach(createDir)
+}
